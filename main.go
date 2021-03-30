@@ -9,7 +9,9 @@ import (
 
 func main() {
 
-	if database.CheckConnection() == 0 {
+	var connExists int = database.CheckConnection()
+
+	if connExists == 0 {
 		log.Fatal("No connection to the database")
 		return
 	}
